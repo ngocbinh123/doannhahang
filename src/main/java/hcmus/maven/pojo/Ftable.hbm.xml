@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 13, 2016 2:22:39 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="hcmus.maven.pojo.Ftable" table="ftable" schema="public">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="assigned" />
+        </id>
+        <property name="name" type="string">
+            <column name="name" />
+        </property>
+        <set name="detailorders" table="detailorder" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_table" not-null="true" />
+            </key>
+            <one-to-many class="hcmus.maven.pojo.Detailorder" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 13, 2016 2:22:39 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="hcmus.maven.pojo.Detailworking" table="detailworking" schema="public">
+        <composite-id name="id" class="hcmus.maven.pojo.DetailworkingId">
+            <key-property name="idStaff" type="java.lang.Integer">
+                <column name="id_staff" />
+            </key-property>
+            <key-property name="idWorkingtime" type="java.lang.Integer">
+                <column name="id_workingtime" />
+            </key-property>
+            <key-property name="workingdate" type="date">
+                <column name="workingdate" length="13" />
+            </key-property>
+            <key-property name="idRegisterleave" type="java.lang.Integer">
+                <column name="id_registerleave" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="staff" class="hcmus.maven.pojo.Staff" update="false" insert="false" fetch="select">
+            <column name="id_staff" />
+        </many-to-one>
+        <many-to-one name="workingtime" class="hcmus.maven.pojo.Workingtime" update="false" insert="false" fetch="select">
+            <column name="id_workingtime" />
+        </many-to-one>
+        <many-to-one name="registerleave" class="hcmus.maven.pojo.Registerleave" update="false" insert="false" fetch="select">
+            <column name="id_registerleave" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

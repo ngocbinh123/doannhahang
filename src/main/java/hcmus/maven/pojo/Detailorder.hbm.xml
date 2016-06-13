@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 13, 2016 2:22:39 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="hcmus.maven.pojo.Detailorder" table="detailorder" schema="public">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="ftable" class="hcmus.maven.pojo.Ftable" fetch="select">
+            <column name="id_table" not-null="true" />
+        </many-to-one>
+        <many-to-one name="staff" class="hcmus.maven.pojo.Staff" fetch="select">
+            <column name="id_staff" not-null="true" />
+        </many-to-one>
+        <many-to-one name="food" class="hcmus.maven.pojo.Food" fetch="select">
+            <column name="id_food" not-null="true" />
+        </many-to-one>
+        <property name="numberofcustomer" type="java.lang.Integer">
+            <column name="numberofcustomer" />
+        </property>
+        <property name="startdate" type="date">
+            <column name="startdate" length="13" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

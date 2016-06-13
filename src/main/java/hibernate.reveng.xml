@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+  <table-filter match-schema="public" match-name="detailorder"/>
+  <table-filter match-schema="public" match-name="detailworking"/>
+  <table-filter match-schema="public" match-name="food"/>
+  <table-filter match-schema="public" match-name="ftable"/>
+  <table-filter match-schema="public" match-name="registerleave"/>
+  <table-filter match-schema="public" match-name="registerstatus"/>
+  <table-filter match-schema="public" match-name="staff"/>
+  <table-filter match-schema="public" match-name="typestaff"/>
+  <table-filter match-schema="public" match-name="workingstatus"/>
+  <table-filter match-schema="public" match-name="workingtime"/>
+</hibernate-reverse-engineering>

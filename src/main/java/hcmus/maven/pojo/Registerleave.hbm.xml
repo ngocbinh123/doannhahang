@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 13, 2016 2:22:39 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="hcmus.maven.pojo.Registerleave" table="registerleave" schema="public">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="staff" class="hcmus.maven.pojo.Staff" fetch="select">
+            <column name="id_staff" />
+        </many-to-one>
+        <many-to-one name="registerstatus" class="hcmus.maven.pojo.Registerstatus" fetch="select">
+            <column name="status" />
+        </many-to-one>
+        <many-to-one name="workingtime" class="hcmus.maven.pojo.Workingtime" fetch="select">
+            <column name="id_leaveworkingtime" />
+        </many-to-one>
+        <property name="leavedate" type="date">
+            <column name="leavedate" length="13" not-null="true" />
+        </property>
+        <set name="detailworkings" table="detailworking" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_registerleave" />
+            </key>
+            <one-to-many class="hcmus.maven.pojo.Detailworking" />
+        </set>
+    </class>
+</hibernate-mapping>
